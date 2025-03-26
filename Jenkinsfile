@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         JAVA_HOME = "C:\Program Files\Java\jdk-21"
-        PATH = "${env.JAVA_HOME}\\bin;${env.PATH}"
+        PATH = "${JAVA_HOME}\\bin;${env.PATH}"
     }
 
     stages {
@@ -26,7 +26,7 @@ pipeline {
 
         stage('Run Java Program') {
             steps {
-                bat 'java Student'
+                bat 'java student'
             }
         }
     }
