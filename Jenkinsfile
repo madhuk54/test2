@@ -11,13 +11,6 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/madhuk54/test2.git'
             }
         }
-
-        stage('Check Files') {
-            steps {
-                bat 'dir'  
-            }
-        }
-
         stage('Compile Java') {
             steps {
                 bat 'javac student.java'
