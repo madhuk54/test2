@@ -1,25 +1,28 @@
 pipeline {
-    agent any 
-     environment {
-        JAVA_HOME = "C:\\Program Files\\Java\\jdk-21"
-        PATH = "${JAVA_HOME}\\bin;${env.PATH}"
-    }
+    agent any
+
     stages {
-        stage('Clone from GitHub') {
+        stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/madhuk54/test.git'
+                git branch: 'main', url: 'https://github.com/madhuk54/test2.git'
+            }
+        }
+
+        stage('Check Files') {
+            steps {
+                bat 'dir'  
             }
         }
 
         stage('Compile Java') {
             steps {
-                bat 'javac student.java' 
+                bat 'javac student.java'
             }
         }
 
         stage('Run Java Program') {
             steps {
-                bat 'java student'  
+                bat 'java Student'
             }
         }
     }
@@ -33,3 +36,4 @@ pipeline {
         }
     }
 }
+
